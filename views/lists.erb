@@ -1,0 +1,14 @@
+<ul id="lists">
+  <% sorted_lists_with_index(@lists) do |list, idx| %>
+    <li class="<%= list_class(list) %>">
+      <a href="/lists/<%= idx %>">
+        <h2><%= list[:name] %></h2>
+        <p><%= "#{num_todos_done(list)}/#{list[:todos].size}" %></p>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<% content_for :header_link do %>
+  <a class="add" href="/lists/new">New List</a>
+<% end %>

@@ -1,0 +1,20 @@
+<section id="todos">
+  <header>
+    <h2>Create a New List</h2>
+  </header>
+</section>
+
+<form action="/lists" method="post">
+  <dl>
+    <dt>
+      <label for="list_name">Enter the name for your new list:</label>
+    </dt>
+    <dd>
+      <input type="text" name="list_name" placeholder="List Name" value="">
+    </dd>
+  <input type="submit" value="Save">
+</form>
+
+<% content_for :header_link do %>
+  <a href="/lists">Cancel</a>
+<% end %>
